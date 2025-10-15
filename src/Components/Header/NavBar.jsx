@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const NavBar = () => {
    const links = <>
-   <li className='m-2'>Home</li>
-   <li  className='m-2'>Listed Books</li>
-   <li className='m-2'>Pages to Read</li>
+   <Link to={'/'}><li className='m-2 hover:text-green-400 hover:border-2 border-green-400 p-2 rounded-xl'>Home</li></Link>
+   <Link to="/about"><li  className='m-2 hover:text-green-400 hover:border-2 border-green-400 p-2 rounded-xl'>About</li></Link>
+   <li className='m-2 hover:text-green-400 hover:border-2 border-green-400 p-2 rounded-xl'>Pages to Read</li>
    </>
 
   return (
@@ -20,15 +21,16 @@ const NavBar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl font-bold">Book Vibe</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {links}
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end gap-3">
+    <a className="btn bg-green-500 text-white">Sign In</a>
+    <a className="btn bg-sky-400 text-white">Sign Up</a>
   </div>
 </div>
   );
